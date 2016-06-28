@@ -1,0 +1,20 @@
+C:\Users\razrab2\documents\visual studio 2013\Projects\WarningsProject\WarningsProject\obj\Debug\WarningsProject.csprojResolveAssemblyReference.cache
+C:\Users\razrab2\documents\visual studio 2013\Projects\WarningsProject\WarningsProject\bin\Debug\WarningsProject.exe
+C:\Users\razrab2\documents\visual studio 2013\Projects\WarningsProject\WarningsProject\bin\Debug\WarningsProject.pdb
+C:\Users\razrab2\documents\visual studio 2013\Projects\WarningsProject\WarningsProject\obj\Debug\WarningsProject.exe
+C:\Users\razrab2\documents\visual studio 2013\Projects\WarningsProject\WarningsProject\obj\Debug\WarningsProject.pdb
+C:\Users\razrab2\Desktop\backups\6 June\17.06\WarningsProject\WarningsProject\obj\Debug\WarningsProject.exe
+C:\Users\razrab2\Desktop\backups\6 June\17.06\WarningsProject\WarningsProject\bin\Debug\WarningsProject.exe
+C:\Users\razrab2\Desktop\backups\6 June\17.06\WarningsProject\WarningsProject\bin\Debug\WarningsProject.pdb
+C:\Users\razrab2\Desktop\backups\6 June\17.06\WarningsProject\WarningsProject\obj\Debug\WarningsProject.csprojResolveAssemblyReference.cache
+C:\Users\razrab2\Desktop\backups\6 June\17.06\WarningsProject\WarningsProject\obj\Debug\WarningsProject.pdb
+C:\Users\razrab2\Desktop\backups\6 June\21.06\2\WarningsProject\WarningsProject\obj\Debug\WarningsProject.exe
+C:\Users\razrab2\Desktop\backups\6 June\21.06\2\WarningsProject\WarningsProject\obj\Debug\WarningsProject.pdb
+C:\Users\razrab2\Desktop\backups\6 June\21.06\2\WarningsProject\WarningsProject\bin\Debug\WarningsProject.exe
+C:\Users\razrab2\Desktop\backups\6 June\21.06\2\WarningsProject\WarningsProject\bin\Debug\WarningsProject.pdb
+C:\Users\razrab2\Desktop\backups\6 June\21.06\2\WarningsProject\WarningsProject\obj\Debug\WarningsProject.csprojResolveAssemblyReference.cache
+C:\Users\razrab2\Documents\GitHub\WarningProjectGit\WarningsProject\obj\Debug\WarningsProject.exe
+C:\Users\razrab2\Documents\GitHub\WarningProjectGit\WarningsProject\obj\Debug\WarningsProject.pdb
+C:\Users\razrab2\Documents\GitHub\WarningProjectGit\WarningsProject\bin\Debug\WarningsProject.exe
+C:\Users\razrab2\Documents\GitHub\WarningProjectGit\WarningsProject\bin\Debug\WarningsProject.pdb
+C:\Users\razrab2\Documents\GitHub\WarningProjectGit\WarningsProject\obj\Debug\WarningsProject.csprojResolveAssemblyReference.cache
