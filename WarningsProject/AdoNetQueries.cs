@@ -44,37 +44,38 @@ namespace WarningsProject
                 command.CommandText = string.Format(@"select * from ""BRANCHES_EURO"".""@ACC_PAINTS_IT"" where ""U_insID""={0}", insID);
                 connection.Open();
                 
-                    using (HanaDataAdapter da = new HanaDataAdapter(command.CommandText, connection))
+                using (HanaDataAdapter da = new HanaDataAdapter(command.CommandText, connection))
+                {
+                    using (DataTable dt = new DataTable())
                     {
-                        using (DataTable dt = new DataTable())
+                        da.Fill(dt);
+                        dataForTables[0] = new Form1.allFields[dt.Rows.Count];
+                        for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            da.Fill(dt);
-                            dataForTables[0] = new Form1.allFields[dt.Rows.Count];
-                            for (int i = 0; i < dt.Rows.Count; i++)
-                            {
-                                dataForTables[0][i].code1 = dt.Rows[i]["U_Code"].ToString();
-                                dataForTables[0][i].title = dt.Rows[i]["U_Name"].ToString();
+                            dataForTables[0][i].code1 = dt.Rows[i]["U_Code"].ToString();
+                            dataForTables[0][i].title = dt.Rows[i]["U_Name"].ToString();
 
-                                dataForTables[0][i].photo = dt.Rows[i]["U_Picture"].ToString();
-                                dataForTables[0][i].serialNumber = dt.Rows[i]["U_SerialNumber"].ToString();
-                                dataForTables[0][i].articul = dt.Rows[i]["U_Articul"].ToString();
-                                dataForTables[0][i].EAN = dt.Rows[i]["U_EAN"].ToString();
+                            dataForTables[0][i].photo = dt.Rows[i]["U_Picture"].ToString();
+                            dataForTables[0][i].serialNumber = dt.Rows[i]["U_SerialNumber"].ToString();
+                            dataForTables[0][i].articul = dt.Rows[i]["U_Articul"].ToString();
+                            dataForTables[0][i].EAN = dt.Rows[i]["U_EAN"].ToString();
 
-                                dataForTables[0][i].instDate = dt.Rows[i]["U_InstDate"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[i]["U_InstDate"]).ToString("yyyyMMdd") : null;
-                                dataForTables[0][i].srokExpl = dt.Rows[i]["U_LifeTime"].ToString();
-                                dataForTables[0][i].snDate = dt.Rows[i]["U_drDownDate"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[i]["U_drDownDate"]).ToString("yyyyMMdd") : null; //dt.Rows[i]["U_drDownDate"].ToString();
-                                dataForTables[0][i].comment = dt.Rows[i]["U_Comment"].ToString();
+                            dataForTables[0][i].instDate = dt.Rows[i]["U_InstDate"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[i]["U_InstDate"]).ToString("yyyyMMdd") : null;
+                            dataForTables[0][i].srokExpl = dt.Rows[i]["U_LifeTime"].ToString();
+                            dataForTables[0][i].snDate = dt.Rows[i]["U_drDownDate"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[i]["U_drDownDate"]).ToString("yyyyMMdd") : null; //dt.Rows[i]["U_drDownDate"].ToString();
+                            dataForTables[0][i].comment = dt.Rows[i]["U_Comment"].ToString();
 
-                                dataForTables[0][i].warning = dt.Rows[i]["U_Warning"].ToString();
-                                dataForTables[0][i].charact = dt.Rows[i]["U_Characteristics"].ToString();
-                                dataForTables[0][i].modif = dt.Rows[i]["U_Modification"].ToString();
+                            dataForTables[0][i].warning = dt.Rows[i]["U_Warning"].ToString();
+                            dataForTables[0][i].charact = dt.Rows[i]["U_Characteristics"].ToString();
+                            dataForTables[0][i].modif = dt.Rows[i]["U_Modification"].ToString();
 
-                                dataForTables[0][i].insID = dt.Rows[i]["U_insID"].ToString();
-                            }
+                            dataForTables[0][i].track = dt.Rows[i]["U_trackingDate"].ToString();
+                            dataForTables[0][i].insID = dt.Rows[i]["U_insID"].ToString();
                         }
                     }
+                }
                 
-                    connection.Close();
+                connection.Close();
             }
             
             using (HanaCommand command = new HanaCommand() { Connection = connection })
@@ -84,39 +85,40 @@ namespace WarningsProject
                 command.CommandText = string.Format(@"select * from ""BRANCHES_EURO"".""@ACC_PAINTS_ITEMS_2"" where ""U_insID""={0}", insID);
                 connection.Open();
                
-                    using (HanaDataAdapter da = new HanaDataAdapter(command.CommandText, connection))
+                using (HanaDataAdapter da = new HanaDataAdapter(command.CommandText, connection))
+                {
+                    using (DataTable dt = new DataTable())
                     {
-                        using (DataTable dt = new DataTable())
+                        da.Fill(dt);
+                        dataForTables[1] = new Form1.allFields[dt.Rows.Count];
+                        for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            da.Fill(dt);
-                            dataForTables[1] = new Form1.allFields[dt.Rows.Count];
-                            for (int i = 0; i < dt.Rows.Count; i++)
-                            {
-                                dataForTables[1][i].code1 = dt.Rows[i]["U_code"].ToString();
-                                dataForTables[1][i].title = dt.Rows[i]["U_TitlePaint"].ToString();
+                            dataForTables[1][i].code1 = dt.Rows[i]["U_code"].ToString();
+                            dataForTables[1][i].title = dt.Rows[i]["U_TitlePaint"].ToString();
 
-                                dataForTables[1][i].batchNumber = dt.Rows[i]["U_BatchNumber"].ToString();
-                                dataForTables[1][i].articul = dt.Rows[i]["U_Articul"].ToString();
-                                dataForTables[1][i].EAN = dt.Rows[i]["U_EAN"].ToString();
-                                dataForTables[1][i].createDate = dt.Rows[i]["U_ManufDate"].ToString();
+                            dataForTables[1][i].batchNumber = dt.Rows[i]["U_BatchNumber"].ToString();
+                            dataForTables[1][i].articul = dt.Rows[i]["U_Articul"].ToString();
+                            dataForTables[1][i].EAN = dt.Rows[i]["U_EAN"].ToString();
+                            //~~~~~~~~~~~
+                            dataForTables[1][i].createDate = dt.Rows[i]["U_ManufDate"].ToString();
+                            dataForTables[1][i].createDate = dt.Rows[i]["U_ManufDate"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[i]["U_ManufDate"]).ToString("yyyyMMdd") : null;
 
-                                dataForTables[1][i].shipingDate = dt.Rows[i]["U_DeliveryDate"].ToString();
-                                dataForTables[1][i].srokExpl = dt.Rows[i]["U_ShelfLife"].ToString();
+                            dataForTables[1][i].shipingDate = dt.Rows[i]["U_DeliveryDate"].ToString();
+                            dataForTables[1][i].shipingDate = dt.Rows[i]["U_DeliveryDate"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[i]["U_DeliveryDate"]).ToString("yyyyMMdd") : null;
+                                
+                            dataForTables[1][i].srokExpl = dt.Rows[i]["U_ShelfLife"].ToString();
+                            dataForTables[1][i].srokExpl = dt.Rows[i]["U_ShelfLife"] != DBNull.Value ? Convert.ToDateTime(dt.Rows[i]["U_ShelfLife"]).ToString("yyyyMMdd") : null;
+                            //~~~~~~~~~~~
+                            dataForTables[1][i].comment = dt.Rows[i]["U_Comment"].ToString();
+                            dataForTables[1][i].warning = dt.Rows[i]["U_Warning"].ToString();
 
-                                dataForTables[1][i].docEntry = dt.Rows[i]["U_DocEntry"].ToString();
-
-                                dataForTables[1][i].comment = dt.Rows[i]["U_Comment"].ToString();
-                                dataForTables[1][i].warning = dt.Rows[i]["U_Warning"].ToString();
-
-                                dataForTables[1][i].insID = dt.Rows[i]["U_insID"].ToString();
-                            }
+                            dataForTables[1][i].track = dt.Rows[i]["U_trackingDate"].ToString();
+                            dataForTables[1][i].insID = dt.Rows[i]["U_insID"].ToString();
                         }
                     }
                 }
-                
-                    connection.Close();
-                
-            
+            }
+            connection.Close();
 
             return dataForTables;
         }

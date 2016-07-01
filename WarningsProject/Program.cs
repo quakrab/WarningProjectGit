@@ -23,6 +23,7 @@ namespace WarningsProject
                 {
                     oApp = new Application(args[0]);
                 }
+
                 Menu MyMenu = new Menu();
                 oApp.RegisterMenuEventHandler(MyMenu.SBO_Application_MenuEvent);
                 

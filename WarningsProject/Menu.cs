@@ -10,6 +10,8 @@ namespace WarningsProject
     {
         private SAPbouiCOM.Application UIApp = SAPbouiCOM.Framework.Application.SBO_Application;
         
+        public static dataFromOINS initData;
+
         public void SBO_Application_MenuEvent(ref SAPbouiCOM.MenuEvent pVal, out bool BubbleEvent)
         {
             BubbleEvent = true;
@@ -17,7 +19,6 @@ namespace WarningsProject
                 ContextMenu contextMenu = ContextMenu.GetObj;
                 if ( pVal.BeforeAction )
                 {
-                    
                     if ( pVal.MenuUID == "3591" )
                     {
                         contextMenu.Clear();
@@ -28,12 +29,15 @@ namespace WarningsProject
                     {
                         // Заполнение формы, которая сейчас откроется
                         string id = ((SAPbouiCOM.EditText)UIApp.Forms.ActiveForm.Items.Item("lab2").Specific).Value;
-                        dataFromOINS a = AdoNetQueries.GetEqCard(id);
+                       
+                        initData = AdoNetQueries.GetEqCard(id);
+                        
+                        //contextMenu.Clear();
 
-                        contextMenu.Clear();
+                        SAPbouiCOM.Framework.Application.SBO_Application.ActivateMenuItem("47620");
 
-                        var f = new Form1(a);
-                        f.Show();
+                        //var f = new Form1(a);
+                        //f.Show();
                         //var f = new UDOForm2(a.internalSN, a.custmrName, a.itemName);
                     }
                 }

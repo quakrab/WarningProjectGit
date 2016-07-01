@@ -62,6 +62,7 @@ namespace WarningsProject
             this.StaticText7 = ((SAPbouiCOM.StaticText)(this.GetItem("Item_11").Specific));
             this.EditText5 = ((SAPbouiCOM.EditText)(this.GetItem("Item_12").Specific));
             this.Matrix0 = ((SAPbouiCOM.Matrix)(this.GetItem("Item_15").Specific));
+            this.Matrix0.ValidateAfter += new SAPbouiCOM._IMatrixEvents_ValidateAfterEventHandler(this.Matrix0_ValidateAfter);
             this.Matrix0.ChooseFromListAfter += new SAPbouiCOM._IMatrixEvents_ChooseFromListAfterEventHandler(this.Matrix0_ChooseFromListAfter);
             this.Folder0 = ((SAPbouiCOM.Folder)(this.GetItem("Item_17").Specific));
             this.Folder1 = ((SAPbouiCOM.Folder)(this.GetItem("Item_18").Specific));
@@ -91,23 +92,10 @@ namespace WarningsProject
             this.Matrix1.Columns.Item("batch").Editable = false;
             this.oForm = this.UIApp.Forms.ActiveForm;
             this.OnCustomInitialize();
-
         }
-
 
         void UIApp_ItemEvent(string FormUID, ref SAPbouiCOM.ItemEvent pVal, out bool BubbleEvent)
         {
-            if (pVal.ItemUID == "Item_34")
-            {
-                
-            }
-
-            
-            if (!pVal.BeforeAction && pVal.FormType == 60150)
-            {
-
-            }
-
             if (pVal.FormType == 65053)
             {
                 if ((Matrix0.Columns.Item("photo").Cells.Item(pVal.Row).Specific as SAPbouiCOM.EditText).Value == "" || (Matrix0.Columns.Item("photo").Cells.Item(pVal.Row).Specific as SAPbouiCOM.EditText).Value == null)
@@ -200,6 +188,7 @@ namespace WarningsProject
             public string shipingDate;
 
             public string insID;
+            public string track;
         }
 
         // "Отменить"
@@ -251,7 +240,6 @@ namespace WarningsProject
                         {
                             AdoNetQueries.updateData(data, 1);
                         }
-                        
                     }
                 }
                 else if (Folder1.Selected)
@@ -605,6 +593,12 @@ namespace WarningsProject
 
                 this.Matrix1.CommonSetting.SetRowBackColor(i, greenBackColor);
             }
+        }
+
+        private void Matrix0_ValidateAfter(object sboObject, SAPbouiCOM.SBOItemEventArg pVal)
+        {
+            
+
         }
     }
 }
