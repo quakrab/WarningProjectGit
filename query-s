@@ -1,0 +1,14 @@
+
+select "email" from "OHEM" where "empID" in (
+	select "manager" from "OHEM" where "empID" in (
+		select "technician" from "OINS" where "insID" IN (
+			select "U_insID" from "@ACC_PAINTS_IT" where "U_drDownDate" BETWEEN '01.06.2016' AND '30.06.2016'
+		)
+	)
+)
+
+	select "email" from "OHEM" where "empID" in (
+		select "technician" from "OINS" where "insID" IN (
+			select "U_insID" from "@ACC_PAINTS_IT" where "U_drDownDate" BETWEEN '01.06.2016' AND '30.06.2016'
+		)
+	)
